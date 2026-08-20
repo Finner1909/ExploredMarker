@@ -1,0 +1,7 @@
+name: ExploredMarker
+version: 1.0.0
+main: io.github.finner1909.exploredmarker.ExploredMarkerPlugin
+api-version: '1.21'
+description: Marks chunks players can see as explored, so the live map renders them
+author: Finner1909
+website: https://github.com/Finner1909/ExploredMarker

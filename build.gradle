@@ -1,0 +1,26 @@
+plugins { id 'java' }
+
+group = 'io.github.finner1909'
+version = '1.0.0'
+
+repositories {
+    mavenCentral()
+    maven { url = 'https://repo.papermc.io/repository/maven-public/' }
+}
+
+dependencies {
+    // Compile-only, and the only dependency. This plugin reads and writes one
+    // chunk field; it needs no map-plugin API and no other libraries.
+    // Any Paper API recent enough to expose Chunk#getInhabitedTime /
+    // #setInhabitedTime will do - lower this if you target an older server.
+    compileOnly 'io.papermc.paper:paper-api:26.2.build.111-stable'
+}
+
+java {
+    // Paper 26.2 requires Java 25. Lower this to match your target API.
+    toolchain { languageVersion = JavaLanguageVersion.of(25) }
+}
+
+tasks.jar {
+    archiveFileName = "ExploredMarker-${version}.jar"
+}
